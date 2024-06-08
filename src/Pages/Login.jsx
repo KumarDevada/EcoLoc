@@ -25,7 +25,7 @@ const Login = () => {
   }, [islogin])
 
   const login = async () => {
-    if (Email === "" || Password === "") {
+    if (Username === "" || Password === "") {
       alert("Please fill all the fields");
     } else {
       try {

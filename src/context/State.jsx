@@ -109,7 +109,7 @@ const State = (props) => {
     const sendstate = await Locationstate?.replace(/\s/g, "").toLowerCase();
     console.log(sendstate);
     const res = await fetch(
-      `https://ewfl-backend-hemant2335.vercel.app/ewaste/${(sendstate)?(sendstate):("haryana")}`
+      `https://ewfl-backend-hemant2335.vercel.app/ewaste/${(sendstate)?(sendstate):(Locationstate)}`
     );
     const data = await res.json();
     setfetcheddata(data?.data?.[0]?.data);
