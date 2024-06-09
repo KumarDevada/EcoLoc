@@ -12,7 +12,7 @@ import { GrLocation } from "react-icons/gr";
 import { useEffect } from 'react';
 const Navbar = () => {
 
-  const {isdark , setisdark , setislogin , Location} = useContext(Context)
+  const {isdark , setisdark , setislogin , Location, User} = useContext(Context)
   
   const navigate = useNavigate();
   const body = document.body;
@@ -115,9 +115,9 @@ const Navbar = () => {
             >
               <i class="fi fi-rr-shopping-cart"></i>
             </button>
-            <button className=' font-medium  font-poppins px-4 py-2 bg-[#222222] rounded-3xl hover:bg-[#34d399]  transition-transform nav' onClick={()=>{navigate("/profile")}}><i class="fi fi-sr-user"></i></button>
+            <button className=' font-medium  font-poppins px-4 py-2 rounded-3xl hover:bg-[#34d399]  transition-transform nav' onClick={()=>{navigate("/profile")}}><i class="fi fi-sr-user"></i></button>
             <div className='flex w-fit h-fit cursor-pointer justify-center items-center p-2 rounded-lg border-2' onClick={()=>{navigate('/redeem')}} >
-              <h1>500 <i style={{color:'orange'}} class="fa-brands fa-bitcoin"></i></h1>
+              <h1>{User?.credits || 0} <i style={{color:'orange'}} class="fa-brands fa-bitcoin"></i></h1>
               
             </div>
           </div>

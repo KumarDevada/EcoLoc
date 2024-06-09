@@ -2,25 +2,26 @@ import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Context from '../context/Context'
 
-const CatCard = ({image , name , link , cardid}) => {
+const CatCard = ({image , name , cardid, cost}) => {
 
   const navigate = useNavigate()
-  const {setiscartupdated , iscartupdated} = useContext(Context);
+  const {setiscartupdated , iscartupdated, User} = useContext(Context);
   const addtocart = async() => {
     console.log(cardid, sessionStorage.getItem('user') );
     try {
-      const response = await fetch('https://ewfl-backend-hemant2335.vercel.app/user/updatecartdata', {
-      method: 'PUT',
+      const response = await fetch('https://ecoloc-backend.onrender.com/api/cart', {
+      method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${User?.accessToken}`
       },
-      body: JSON.stringify({ cartId: cardid, quantity: 1 , userId : sessionStorage.getItem('user')})
+      body: JSON.stringify({product: name, price: cost })
     })
     
 
     const data = await response.json();
 
-    if(data?.message == "Cart updated successfully")
+    if(data?.success)
     {
       setiscartupdated(!iscartupdated)
       navigate('/cart')

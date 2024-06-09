@@ -31,7 +31,7 @@ const Login = () => {
       try {
         setloading(true);
         const res = await fetch(
-          "http://127.0.0.1:3000/api/users/login",
+          "https://ecoloc-backend.onrender.com/api/users/login",
           {
             method: "POST",
             headers: {
@@ -64,7 +64,7 @@ const Login = () => {
       try {
         setloading(true);
         const res = await fetch(
-          "http://127.0.0.1:3000/api/users/",
+          "https://ecoloc-backend.onrender.com/api/users/",
           {
             method: "POST",
             headers: {
@@ -117,7 +117,7 @@ const Login = () => {
             
             <div className=" border-b-2 md:w-[60vh]  flex w-[45vh]">
               <input
-                type="email"
+                type="text"
                 className=" mt-2 w-full rounded-lg py-4 font-montserrat  font-medium  md:w-[60vh]"
                 onChange={(e) => {
                   setUsername(e.target.value);

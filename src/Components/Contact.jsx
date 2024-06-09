@@ -24,7 +24,7 @@ const Contact = () => {
                 </p>
                 <input
                   type="email"
-                  className="w-full mt-2 rounded-lg  p-4 font-montserrat border-2 font-medium bg-[#222222]"
+                  className="w-full mt-2 rounded-lg  p-4 font-montserrat border-2 font-medium bg-[#f6f6f6]"
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
@@ -38,7 +38,7 @@ const Contact = () => {
                 </p>
                 <input
                   type="text"
-                  className="w-full mt-2 rounded-lg text-[#F9F6EE] p-4 font-montserrat border-2 font-medium bg-[#222222]"
+                  className="w-full mt-2 rounded-lg  p-4 font-montserrat border-2 font-medium bg-[#f6f6f6]"
                   onChange={(e) => {
                     setName(e.target.value);
                   }}
@@ -52,7 +52,7 @@ const Contact = () => {
                 </p>
                 <input
                   type="text"
-                  className="w-full mt-2 rounded-lg text-[#F9F6EE] p-4 font-montserrat border-2 font-medium bg-[#222222]"
+                  className="w-full mt-2 rounded-lg p-4 font-montserrat border-2 font-medium bg-[#f6f6f6]"
                   onChange={(e) => {
                     setName(e.target.value);
                   }}
@@ -60,7 +60,7 @@ const Contact = () => {
                 />
               </div>
             <button
-              className="hover:bg-[#01796f] mt-[2vh] hover:scale-105 shadow-xl transition-transform  font-montserrat font-semibold p-3 text-slate-200 rounded-3xl  w-fit"
+              className="bg-[#01796f] hover:bg-white mt-[2vh] hover:scale-105 shadow-xl transition-transform  font-montserrat font-semibold p-3 text-slate-200 hover:text-slate-700 rounded-3xl  w-fit"
               onClick={() => register()}
             >
               Submit

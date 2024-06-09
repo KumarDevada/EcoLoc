@@ -37,7 +37,7 @@ const Profile = () => {
                     
                     <div className=' w-fit p-4 rounded-lg'>
                     {User?.isadmin ? (<img src={admin} alt="" className='h-[20vh] md:h-[30vh]' />) : (<img src={profile} alt="" className='h-[20vh] md:h-[30vh]' />)}
-                    <h2 className=' text-slate-500 mt-5  font-poppins text-4xl'><i class="fa-solid fa-user"></i> Kumar{User?.username}</h2>
+                    <h2 className=' text-slate-500 mt-5  font-poppins text-4xl'><i class="fa-solid fa-user"></i>{User?.username}</h2>
                     </div>
                     <div className='flex flex-col gap-5 '>
                         <div className='flex flex-col gap-5 mb-5 '>
@@ -46,13 +46,13 @@ const Profile = () => {
                             
                         </div>
                         <div className='flex gap-5'>
-                            <h2 className='text-6xl text-green-500  font-poppins font-medium'><i class="fa-solid fa-tree"></i> 2{User?.treesPlanted} </h2>
+                            <h2 className='text-6xl text-green-500  font-poppins font-medium'><i class="fa-solid fa-tree"></i> {User?.treesPlanted} </h2>
                         </div>
                         <div className='flex gap-5'>
-                            <h2 className='text-4xl text-orange-400  font-poppins font-medium'>280{User?.credits} <i class="fa-brands fa-bitcoin"></i></h2>
+                            <h2 className='text-4xl text-orange-400  font-poppins font-medium'>{User?.credits} <i class="fa-brands fa-bitcoin"></i></h2>
                         </div>
                         <div className='flex gap-5'>
-                            <h2 className='text-4xl text-blue-500 font-poppins font-medium'><i class="fa-solid fa-recycle"></i> 3{User?.recycledDevices?.length} Items</h2>
+                            <h2 className='text-4xl text-blue-500 font-poppins font-medium'><i class="fa-solid fa-recycle"></i> {User?.numberOfItemsRecycled || 0} Items</h2>
                         </div>
                         </div>
                         <button style={{backgroundColor:'lightgrey'}}
@@ -64,7 +64,7 @@ const Profile = () => {
                     </div>
                     <div className='flex flex-col'>
                     <h2 className='text-center text-3xl font-bold text-slate-500'>Wallet</h2>
-                    <h1 className='text-center text-5xl font-bold p-2 pt-6 pb-8 text-orange-300' >4563 ₹</h1>
+                    <h1 className='text-center text-5xl font-bold p-2 pt-6 pb-8 text-orange-300' >{User?.walletAmount || 0} ₹</h1>
                     <input
                         type="name"
                         className="w-full mt-2 rounded-lg  p-4 font-montserrat border-2 font-medium bg-[#222222]"

@@ -8,22 +8,7 @@ const ItemExplore = () => {
     const {category , subcategory} = useParams();
     const [item, setitem] = useState([]);
 
-    const fetchitem = async() => {
-        const res = await fetch(`https://ewfl-backend-hemant2335.vercel.app/edevice/categories/${category}/${subcategory}/`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-        
-        const data = await res.json();
-        console.log(data?.[0]);
-        setitem(data?.[0]);
-      }
-
-    useEffect(() => {
-        fetchitem();
-    }, [])
+    
   return (
     <Wrapper>
     <h1 className="mt-[5vh] font-montserrat font-bold text-2xl ">

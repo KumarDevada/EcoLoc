@@ -4,7 +4,7 @@ import mapboxgl from 'mapbox-gl';
 
 const State = (props) => {
 
-    const [isdark, setisdark] = useState(true)
+    const [isdark, setisdark] = useState(false)
     const [isLoading, setisLoading] = useState(false)
     const [iscartupdated, setiscartupdated] = useState(false);
     const [ispopup, setispopup] = useState(false)
@@ -21,32 +21,32 @@ const State = (props) => {
 
     // To fetch the data for the category
 
-    const fetchcategory = async() => {
-      const res = await fetch('https://ewfl-backend-hemant2335.vercel.app/edevice/categories', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
+    // const fetchcategory = async() => {
+    //   const res = await fetch('https://ewfl-backend-hemant2335.vercel.app/edevice/categories', {
+    //     method: 'GET',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     }
+    //   })
       
-      const data = await res.json();
-      console.log(data)
-      setcategory(data);
-    }
+    //   const data = await res.json();
+    //   console.log(data)
+    //   setcategory(data);
+    // }
 
-    // To fetch the user details
-    const fetchuser= async() => {
-      const res = await fetch(`https://ewfl-backend-hemant2335.vercel.app/user/${sessionStorage.getItem('user')}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
+    // // To fetch the user details
+    // const fetchuser= async() => {
+    //   const res = await fetch(`https://ewfl-backend-hemant2335.vercel.app/user/${sessionStorage.getItem('user')}`, {
+    //     method: 'GET',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     }
+    //   })
       
-      const data = await res.json();
-      console.log(data?.user);
-      setUser(data?.user);
-    }
+    //   const data = await res.json();
+    //   console.log(data?.user);
+    //   setUser(data?.user);
+    // }
 
     // ALgorith for Location fetching
 
@@ -126,13 +126,13 @@ const State = (props) => {
     });  
   }, [])
 
-  useEffect(() => {
-    fetchuser( )
-  }, [iscartupdated])
+  // useEffect(() => {
+  //   fetchuser( )
+  // }, [iscartupdated])
 
     useEffect(() => {
         fetchcitystate();
-         fetchcategory();
+        //  fetchcategory();
          
          fetchaddress();
     }, [Locationstate])

@@ -8,22 +8,6 @@ const SubExplore = () => {
     const [subcat, setsubcat] = useState([]);
     const {category} = useParams();
 
-    const fetchsubcategory = async() => {
-        const res = await fetch(`https://ewfl-backend-hemant2335.vercel.app/edevice/categories/${category}/subcategories`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        })
-        
-        const data = await res.json();
-        console.log(data);
-        setsubcat(data);
-      }
-
-    useEffect(() => {
-        fetchsubcategory();
-    }, [])
 
   return (
     <Wrapper>
