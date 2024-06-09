@@ -52,13 +52,6 @@ const Navbar = () => {
               <a>Home</a>
             </li>
             <li
-              className="font-semibold font-montserrat  hover:text-[#01796f] cursor-pointer nav"
-              onClick={()=>document.getElementById("about").scrollIntoView({behavior:"smooth"})}
-              
-            >
-              <a>About</a>
-            </li>
-            <li
               className="font-semibold font-montserrat hover:text-[#01796f] cursor-pointer nav"
               onClick={()=>document.getElementById("contact").scrollIntoView({behavior:"smooth"})}
               
