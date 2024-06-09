@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import Context from '../context/Context'
 import { useNavigate } from 'react-router-dom'
 import admin from "../assets/profile.png";
+import ban from '../assets/ban.webp'
 import profile from "../assets/man.png"
 import { useEffect } from 'react'
 
@@ -26,47 +27,61 @@ const Profile = () => {
 
   return (
     <Wrapper>
-    <div className='flex justify-center  my-[10vh] md:mx-0 mx-[5vw]'>
-        <div className='h-fit w-fit shadow-3xl flex flex-col md:flex-row gap-[10vh] justify-center items-center px-10 py-10'>
-            
-            <div className='shadow-3xl w-fit p-4 rounded-lg'>
-            {User?.isadmin ? (<img src={admin} alt="" className='h-[20vh] md:h-[30vh]' />) : (<img src={profile} alt="" className='h-[20vh] md:h-[30vh]' />)}
+        <div style={ { backgroundImage: `url(${ban})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center', width:'90vw', height:'80vh',   position:'relative', backgroundColor:'', borderRadius:'20px'}}>
+            {/* <img style={{zIndex:1,position:'absolute'}} src={ban} alt="" /> */}
+            <div style={{}} className=' z-20 flex '>
                 
-            </div>
-            <div className='flex flex-col gap-5 '>
-                <div className='flex flex-col gap-5 mb-5 '>
-                <div className='flex gap-5'>
-                    <h2 className='text-xl text-[#F9F6EE] font-poppins font-semibold'>Profile </h2>
-                    {User?.role ==  "admin"? (<h2 className='text-xl font-poppins font-medium text-[#F9F6EE]'>Admin</h2>) : (<h2 className='text-xl text-[#F9F6EE] font-poppins font-medium'>User</h2>)}
+                <div className='h-fit w-fit ml-12 mt-16 bg-white rounded-3xl  flex flex-col md:flex-row gap-4  px-10 py-10'>
+                    
+                    <div className=' w-fit p-4 rounded-lg'>
+                    {User?.isadmin ? (<img src={admin} alt="" className='h-[20vh] md:h-[30vh]' />) : (<img src={profile} alt="" className='h-[20vh] md:h-[30vh]' />)}
+                    <h2 className=' text-slate-500 mt-5  font-poppins text-4xl'><i class="fa-solid fa-user"></i> Kumar{User?.username}</h2>
+                    </div>
+                    <div className='flex flex-col gap-5 '>
+                        <div className='flex flex-col gap-5 mb-5 '>
+                        
+                        <div className='flex gap-5'>
+                            
+                        </div>
+                        <div className='flex gap-5'>
+                            <h2 className='text-6xl text-green-500  font-poppins font-medium'><i class="fa-solid fa-tree"></i> 2{User?.treesPlanted} </h2>
+                        </div>
+                        <div className='flex gap-5'>
+                            <h2 className='text-4xl text-orange-400  font-poppins font-medium'>280{User?.credits} <i class="fa-brands fa-bitcoin"></i></h2>
+                        </div>
+                        <div className='flex gap-5'>
+                            <h2 className='text-4xl text-blue-500 font-poppins font-medium'><i class="fa-solid fa-recycle"></i> 3{User?.recycledDevices?.length} Items</h2>
+                        </div>
+                        </div>
+                        <button style={{backgroundColor:'lightgrey'}}
+                    className="shadow-md  font-medium border-2 font-poppins px-4 py-2 bg-slate-500 rounded-3xl hover:bg-slate-500  transition-transform nav"
+                    onClick={() => logout()}
+                    >
+                    Logout
+                    </button>
+                    </div>
+                    <div className='flex flex-col'>
+                    <h2 className='text-center text-3xl font-bold text-slate-500'>Wallet</h2>
+                    <h1 className='text-center text-5xl font-bold p-2 pt-6 pb-8 text-orange-300' >4563 ₹</h1>
+                    <input
+                        type="name"
+                        className="w-full mt-2 rounded-lg  p-4 font-montserrat border-2 font-medium bg-[#222222]"
+                        
+                        placeholder="UPI ID"
+                        />
+                    <button style={{backgroundColor:'orange'}} className='shadow-md  font-medium border-2 font-poppins px-4 py-2 mt-8 bg-slate-500 rounded-3xl hover:bg-slate-500  transition-transform nav'>Withdraw</button>
+                </div>
                     
                 </div>
-                <div className='flex gap-5'>
-                    <h2 className='text-xl text-[#F9F6EE] font-poppins font-semibold'>Name </h2>
-                    <h2 className='text-xl text-[#F9F6EE] font-poppins font-medium'>{User?.username}</h2>
-                </div>
-                <div className='flex gap-5'>
-                    <h2 className='text-xl text-[#F9F6EE] font-poppins font-semibold'>Email </h2>
-                    <h2 className='text-xl text-[#F9F6EE] font-poppins font-medium'>{User?.email}</h2>
-                </div>
-                <div className='flex gap-5'>
-                    <h2 className='text-xl text-[#F9F6EE] font-poppins font-semibold'>Credit Points </h2>
-                    <h2 className='text-xl text-[#F9F6EE] font-poppins font-medium'>{User?.creditPoints}</h2>
-                </div>
-                <div className='flex gap-5'>
-                    <h2 className='text-xl text-[#F9F6EE] font-poppins font-semibold'>Recycled Items </h2>
-                    <h2 className='text-xl text-[#F9F6EE] font-poppins font-medium'>{User?.recycledDevices?.length}</h2>
-                </div>
-                </div>
-                <button
-              className="shadow-3xl font-medium border-2 font-poppins px-4 py-2 bg-[#222222] rounded-md hover:bg-[#01796f]  transition-transform nav"
-              onClick={() => logout()}
-            >
-              Logout
-            </button>
+
+
+                
             </div>
-            
         </div>
-    </div>
+        
+    
     </Wrapper>
   )
 }

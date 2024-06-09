@@ -111,15 +111,15 @@ const Poster = () => {
             className="max-h-[100vh] w-full object-cover rounded-xl"
           />
         </div>
-        <div  className="postercard w-full h-fit  mt-[5vh] shadow-l rounded-xl p-[3vh]  other md:ml-5 mb-10 z-10 searchtext ">
+        <div  className="postercard w-full h-fit m-10  mt-[5vh] shadow-l rounded-xl p-[3vh]  other md:ml-16 mb-10 z-10 searchtext ">
           <h1 className="md:text-[5vh] text-[5vh] font-mono  font-bold">
             Welcome To EcoLoc
           </h1>
-          <p className=" text-gray-400 text-lg font-sans font-small">
+          <p className=" text-slate-500 text-lg font-mono font-small">
           In an effort to combat the growing issue of electronic waste (e-waste), our project is dedicated to responsible recycling and disposal. We provide convenient drop-off locations for old electronics, ensuring they are recycled or refurbished, reducing environmental impact and promoting a sustainable future.
           </p>
 
-          <div className="mt-10 flex  gap-5">
+          <div className="mt-5 flex justify-end gap-5">
             
             
             

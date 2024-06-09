@@ -51,26 +51,33 @@ const Navbar = () => {
             >
               <a>Home</a>
             </li>
-            <li
+            {/* <li
               className="font-semibold font-montserrat  hover:text-[#01796f] cursor-pointer nav"
               onClick={()=>document.getElementById("about").scrollIntoView({behavior:"smooth"})}
               
             >
               <a>About</a>
-            </li>
-            <li
+            </li> */}
+            {/* <li
               className="font-semibold font-montserrat hover:text-[#01796f] cursor-pointer nav"
               onClick={()=>document.getElementById("contact").scrollIntoView({behavior:"smooth"})}
               
             >
               <a>Education</a>
-            </li>
+            </li> */}
             <li
               className="font-semibold font-montserrat hover:text-[#01796f] cursor-pointer nav"
               onClick={()=>document.getElementById("contact").scrollIntoView({behavior:"smooth"})}
               
             >
               <a>Contact</a>
+            </li>
+            <li
+              className="font-semibold font-montserrat hover:text-[#01796f] cursor-pointer nav"
+              onClick={()=> navigate('/redeem')}
+              
+            >
+              <a>Redeem</a>
             </li>
           </ul>
         </nav>

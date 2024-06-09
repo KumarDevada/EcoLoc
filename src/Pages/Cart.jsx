@@ -18,18 +18,17 @@ const Cart = () => {
             return (<Cartcard/>)
           })}
         </div>
-        <div className="shadow-3xl p-4 rounded-xl h-fit">
-          <h2 className="font-medium font-montserrat text-xl mb-8">Summary</h2>
+        <div className="shadow-md bg-green-200 p-4 rounded-xl h-fit">
+          <h2 className="text-slate-500 font-montserrat text-3xl m-4 font-bold">Pay Slip</h2>
           <div className="bg-Grey font-montserrat md:h-[200px] md:w-[350px] w-auto h-[250px]  rounded-md p-4">
-            <h3 className="text-start font-medium mb-2">SubTotal : ₹ 500</h3>
+            <h3 className="text-start font-medium mb-2">SubTotal : 500 <i style={{color:'orange'}} class="fa-brands fa-bitcoin"></i></h3>
             <hr />
             <div className="text-start mt-2">
               This Tells you about total Expenses you would cost after buying
-              the products present in your cart and also Never doubt our
-              calculations
+              the products present in your cart.
             </div>
           </div>
-          <button className="px-10 py-2 border-2 font-montserrat hover:bg-[#01796f] hover:scale-105  mt-4 rounded-lg  font-semibold  transition-transform active:scale-105">
+          <button style={{color:'white' ,backgroundColor:'green'}} className="px-10 py-2 border-2 text-white font-montserrat hover:bg-[#01796f] hover:scale-105  mt-4 rounded-lg  font-semibold  transition-transform active:scale-105">
             Check Out
           </button>
         </div>
