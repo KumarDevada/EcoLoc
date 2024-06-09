@@ -97,24 +97,24 @@ const State = (props) => {
   // To fetch the Ewaste Facility data
   const fetchcitystate = async () => {
     setisLoading(true);
-    const res = await fetch("https://ewfl-backend-hemant2335.vercel.app/ewaste");
+    const res = await fetch("http://127.0.0.1:3000/api/facilitators");
     const data = await res.json();
-    console.log(data)
-    setfacdata(data);
+    console.log(data.data)
+    setfacdata(data.data);
     setisLoading(false);
   }
 
   const fetchaddress = async () => {
     setisLoading(true);
     const sendstate = await Locationstate?.replace(/\s/g, "").toLowerCase();
-    console.log(sendstate);
+    console.log(sendstate,'hello');
     const res = await fetch(
-      `https://ewfl-backend-hemant2335.vercel.app/ewaste/${(sendstate)?(sendstate):(Locationstate)}`
+      `http://127.0.0.1:3000/api/facilitators/${sendstate}`
     );
     const data = await res.json();
-    setfetcheddata(data?.data?.[0]?.data);
+    setfetcheddata(data.data);
     setisLoading(false);
-    console.log("I am latest",data?.data?.[0]?.data)
+    console.log("I am latest",data.data)
   };
 
   useEffect(() => {

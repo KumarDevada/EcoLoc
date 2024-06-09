@@ -5,8 +5,9 @@ import {
   Route,
 } from "react-router-dom";
 import {Navbar, Footer} from "./Components" ;
-import {Homepage , SearchMap ,Login , Explore , PricePred , SubExplore ,ItemExplore , Cart ,Profile} from "./Pages" ;
+import {Homepage , SearchMap ,Login , Explore , PricePred , SubExplore ,ItemExplore , Cart ,Profile,} from "./Pages" ;
 import State from './context/State';
+import Redeem from './Pages/Redeem';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route exact path="/pricepredict" element={<PricePred/>} />
           <Route exact path="/cart" element={<Cart/>} />
           <Route exact path="/profile" element={<Profile/>} />
+          <Route exact path="/redeem" element={<Redeem />} />
         </Routes>
         <Footer/>
       </Router>

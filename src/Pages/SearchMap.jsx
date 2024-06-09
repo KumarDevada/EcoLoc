@@ -260,13 +260,13 @@ const SearchMap = () => {
         <div className="flex flex-col md:flex-row flex-wrap gap-8 ">
         {fetcheddata?.map((item) => (
             <div className=" items-center gap-[5vw] shadow-md p-6 rounded-lg bg-green-200 md:max-w-[60vh] ml-6">
-              <p className="text-slate-500 font-montserrat font-semibold ">{item?.Name_Address}</p>
+              <p className="text-slate-500 font-montserrat font-semibold ">{item?.address}</p>
               <h2 className="text-slate-600 font-montserrat underline font-bold mt-2 ">Capacity </h2>
               <div className="flex justify-between">
                 
                 <div>
                 
-                <h1 className="text-slate-600 font-montserrat text-5xl font-bold mt-2 ">{item?.Installed_Capacity_Metric_Tons_per_Annum_MTA}</h1>
+                <h1 className="text-slate-600 font-montserrat text-5xl font-bold mt-2 ">{item?.capacity}</h1>
                 </div>
                 <div>
                 <button
