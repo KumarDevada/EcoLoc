@@ -85,7 +85,6 @@ const Homepage = () => {
             className="h-[20vh] bg-cover bg-center rounded-xl"
           />
         </div>
-      <About/>
       <Prodedure/>
       <Contact/>
     </Wrapper>
