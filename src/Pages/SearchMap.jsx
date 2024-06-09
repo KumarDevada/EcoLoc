@@ -18,11 +18,11 @@ const SearchMap = () => {
   // Create a function to initialize the map
   const initializeMap = (coordinates1) => {
     mapboxgl.accessToken =
-      "pk.eyJ1IjoibmlzaGFudDc0MTIiLCJhIjoiY2xtYm42NHI5MWN0ZTNkbzVsdzhkNnl0bSJ9.FXHqQifsNwqwWW3g4qEZgw";
+      "pk.eyJ1IjoicGF2YW5rdW1hcjIwMDQiLCJhIjoiY2x4NnRzMXh1MXllODJrcXNpYzVsOXFjdiJ9.Hh83clxm4a1jFSuO9Ds32w";
 
     const map = new mapboxgl.Map({
       container: "map", // Use the provided coordinates as the initial center
-      style: "mapbox://styles/nishant7412/clmd5l4yi01bz01r71roa6h2m",
+      style: "mapbox://styles/mapbox/streets-v12",
       zoom: 18,
       pitch: 50,
       bearing: 0,
@@ -35,7 +35,7 @@ const SearchMap = () => {
   const Geocodeaddress = async (address) => {
     console.log(address)
     mapboxgl.accessToken =
-      "pk.eyJ1IjoibmlzaGFudDc0MTIiLCJhIjoiY2xtYm42NHI5MWN0ZTNkbzVsdzhkNnl0bSJ9.FXHqQifsNwqwWW3g4qEZgw";
+      "pk.eyJ1IjoicGF2YW5rdW1hcjIwMDQiLCJhIjoiY2x4NnRzMXh1MXllODJrcXNpYzVsOXFjdiJ9.Hh83clxm4a1jFSuO9Ds32w";
     const geocodingApiUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${mapboxgl.accessToken}`;
     const response = await fetch(geocodingApiUrl);
     const data = await response.json();
@@ -60,7 +60,7 @@ const SearchMap = () => {
   
         // Create a directions request
         const directionsApiUrl = `https://api.mapbox.com/directions/v5/mapbox/cycling/${lng},${lat};${coordinates[0]},${coordinates[1]}?steps=true&geometries=geojson&access_token=${mapboxgl.accessToken}`;
-  
+        console.log(lng,lat)
         const response = await fetch(directionsApiUrl);
         const data = await response.json();
   
@@ -271,7 +271,7 @@ const SearchMap = () => {
                 <div>
                 <button
                   className="bg-slate-900 mt-[2vh] hover:bg-slate-400 hover:scale-105 shadow-sm transition-transform  font-montserrat font-semibold p-3 rounded-3xl  w-fit"
-                  onClick={()=>{handleSearch(item?.Name_Address)}}
+                  onClick={()=>{handleSearch(item?.address)}}
                 >
                   Get Directions
                 </button>
